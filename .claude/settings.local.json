@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:docs.phantom.com)",
+      "WebFetch(domain:logosarchive.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:upload.wikimedia.org)",
+      "WebFetch(domain:mintcdn.com)",
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "WebFetch(domain:phantom.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:metamask.io)",
+      "WebFetch(domain:images.ctfassets.net)",
+      "WebFetch(domain:phantom.app)",
+      "WebFetch(domain:api.iconify.design)"
+    ]
+  }
+}
