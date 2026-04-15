@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Policy — Blacksheep Operations Pty Ltd</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 40px 24px 80px;
+      background-color: #F2F1EA;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 15px;
+      color: #3D3C37;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .doc-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      padding: 36px 0 28px;
+      border-bottom: 1px solid #D6D4C8;
+    }
+
+    .doc-header img {
+      display: block;
+      width: 180px;
+      height: auto;
+    }
+
+    /* ── TITLE BLOCK ── */
+    .title-block {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid #D6D4C8;
+    }
+
+    .doc-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888078;
+      margin-bottom: 16px;
+    }
+
+    .doc-title {
+      margin: 0 0 6px;
+      font-size: 32px;
+      font-weight: 700;
+      color: #0D0D0D;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .doc-subtitle {
+      margin: 0;
+      font-size: 15px;
+      color: #888078;
+    }
+
+    /* ── METADATA TABLE ── */
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0 0;
+    }
+
+    .meta-table td {
+      padding: 10px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #E8E6DE;
+      vertical-align: top;
+    }
+
+    .meta-table td:first-child {
+      width: 160px;
+      font-weight: 600;
+      color: #0D0D0D;
+      padding-right: 24px;
+    }
+
+    .meta-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ── BODY ── */
+    .doc-body {
+      padding-top: 48px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-left: 14px;
+      border-left: 3px solid #BFFF30;
+      font-size: 18px;
+      font-weight: 700;
+      color: #0D0D0D;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0D0D0D;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: #3D3C37;
+    }
+
+    ul, ol {
+      margin: 0 0 14px;
+      padding-left: 22px;
+      color: #3D3C37;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* Numbered incident steps */
+    ol.incident-steps {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: step;
+    }
+
+    ol.incident-steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+
+    ol.incident-steps li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: #BFFF30;
+      color: #0D0D0D;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* ── DATA TABLES ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+
+    .data-table thead tr {
+      background-color: #0D0D0D;
+    }
+
+    .data-table thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #F2F1EA;
+    }
+
+    .data-table tbody tr {
+      border-bottom: 1px solid #E8E6DE;
+    }
+
+    .data-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .data-table tbody td {
+      padding: 11px 14px;
+      color: #3D3C37;
+      vertical-align: top;
+    }
+
+    .data-table tbody td strong {
+      color: #0D0D0D;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #D6D4C8;
+      margin: 0 0 48px;
+    }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #D6D4C8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .doc-footer-left {
+      font-size: 12px;
+      color: #888078;
+    }
+
+    .doc-footer-left strong {
+      color: #3D3C37;
+    }
+
+    .doc-footer-right {
+      font-size: 12px;
+      color: #B0AEA5;
+    }
+  </style>
+</head>
+<body>
+<div class="doc-container">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <img src="../blacksheep_email/Logo Horizontal.png" alt="Blacksheep">
+  </div>
+
+  <!-- TITLE BLOCK -->
+  <div class="title-block">
+    <span class="doc-label">Policy Document</span>
+    <h1 class="doc-title">Security Policy</h1>
+    <p class="doc-subtitle">Blacksheep Operations Pty Ltd &amp; Flux Interactive Pty Ltd</p>
+
+    <table class="meta-table">
+      <tr>
+        <td>Parties</td>
+        <td>Blacksheep Operations Pty Ltd &amp; Flux Interactive Pty Ltd</td>
+      </tr>
+      <tr>
+        <td>Classification</td>
+        <td>Internal</td>
+      </tr>
+      <tr>
+        <td>Review Cycle</td>
+        <td>Annually, or following any security incident</td>
+      </tr>
+      <tr>
+        <td>Owner</td>
+        <td>Samuel Thompson-Kennedy</td>
+      </tr>
+      <tr>
+        <td>Last Reviewed</td>
+        <td>10 April 2026</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- 1. Purpose -->
+    <div class="section">
+      <h2>1. Purpose</h2>
+      <p>This policy is jointly adopted by Blacksheep Operations Pty Ltd ("Blacksheep") and Flux Interactive Pty Ltd ("Flux"). It defines the information technology security controls, responsibilities, and practices governing the Blacksheep platform. Flux owns and operates the underlying infrastructure; Blacksheep is the principal service operator and owner of all data processed by the platform. This policy applies to all personnel of either party authorised to access Blacksheep systems, infrastructure, source code, or data.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 2. Scope -->
+    <div class="section">
+      <h2>2. Scope</h2>
+      <p>This policy covers:</p>
+      <ul>
+        <li>All Blacksheep environments (production, development, local, and any other active environments)</li>
+        <li>Source code repositories and CI/CD pipelines</li>
+        <li>Infrastructure services (Appendix A — Infrastructure Providers)</li>
+        <li>Third-party service integrations</li>
+        <li>Any systems or devices used to access the above</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 3. Personnel & Access -->
+    <div class="section">
+      <h2>3. Personnel &amp; Access</h2>
+
+      <h3>3.1 Authorised Personnel</h3>
+      <p>Access to Blacksheep infrastructure is limited to Flux staff who are authorised to operate on the Blacksheep project. No third parties have access to production systems unless explicitly authorised by Blacksheep and Flux.</p>
+
+      <h3>3.2 Access Control</h3>
+      <ul>
+        <li>Personnel are granted the minimum access necessary for their role.</li>
+        <li>Access to infrastructure does not imply access to production secret material.</li>
+        <li>Production secrets are displayed once at generation and are thereafter stored only in the sealed secrets manager, from which they cannot be retrieved in plaintext.</li>
+        <li>Only senior engineering, in consultation with Blacksheep, may generate or rotate production secrets.</li>
+      </ul>
+
+      <h3>3.3 Access Provisioning &amp; Revocation</h3>
+      <ul>
+        <li>Access is provisioned on a per-need basis and is limited to core Flux staff authorised to work on Blacksheep.</li>
+        <li>Upon departure or role change, all access credentials, repository permissions, and infrastructure access must be revoked within 24 hours.</li>
+        <li>Provisioning and revocation of access requires formal approval by the Blacksheep founder (or delegated senior engineering) and is recorded against the individual's role.</li>
+      </ul>
+
+      <h3>3.4 Onboarding Requirements</h3>
+      <p>Before access is granted, personnel must:</p>
+      <ul>
+        <li>Execute a confidentiality agreement covering Blacksheep code, infrastructure, and data.</li>
+        <li>Review and acknowledge this policy and the Sensitive Data Policy.</li>
+        <li>Confirm that the device used to access Blacksheep systems meets baseline security requirements — full-disk encryption, automatic screen lock, a current operating system, and no unauthorised software.</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 4. Infrastructure Security -->
+    <div class="section">
+      <h2>4. Infrastructure Security</h2>
+
+      <h3>4.1 Hosting</h3>
+      <p>All persistent Blacksheep data — including databases, backups, and logs — is stored within the primary infrastructure provider (see Appendix A). Content may be served globally via edge and CDN networks.</p>
+      <p>For a full list of infrastructure providers, see <strong>Appendix A</strong>.</p>
+
+      <h3>4.2 Encryption</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Mechanism</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Data at rest</strong></td>
+            <td>Encrypted by the underlying infrastructure provider (provider-managed encryption)</td>
+          </tr>
+          <tr>
+            <td><strong>Cryptographic keys</strong></td>
+            <td>Sealed and signed via a dedicated key management service; not stored in application code or environment variables</td>
+          </tr>
+          <tr>
+            <td><strong>Secrets</strong></td>
+            <td>Managed via the infrastructure provider's sealed secrets manager; irrevocably sealed at rest</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.3 Backup &amp; Recovery</h3>
+      <p>Automated backups are managed by the primary infrastructure provider on the following schedule:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Frequency</th>
+            <th>Interval</th>
+            <th>Retention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Daily</td>
+            <td>Every 24 hours</td>
+            <td>6 days</td>
+          </tr>
+          <tr>
+            <td>Weekly</td>
+            <td>Every 7 days</td>
+            <td>1 month</td>
+          </tr>
+          <tr>
+            <td>Monthly</td>
+            <td>Every 30 days</td>
+            <td>3 months</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Recovery can be initiated by authorised personnel via the infrastructure provider's management interface. All source code is stored in a private version-controlled repository with full history.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 5. Secure Development Practices -->
+    <div class="section">
+      <h2>5. Secure Development Practices</h2>
+      <ul>
+        <li>All code changes require peer review via pull request before merge.</li>
+        <li>CI/CD pipelines run automated linting, type checking, and test suites across all environments.</li>
+        <li>Production deployments are triggered via CI/CD — not manually.</li>
+        <li>Database migrations are version-controlled and applied through the CI/CD pipeline.</li>
+        <li>Dependencies are pinned via lock files to prevent supply chain drift.</li>
+        <li>Dependencies are monitored for known vulnerabilities via automated tooling, with critical and high-severity issues triaged and patched on a prioritised basis.</li>
+        <li>Infrastructure and application components are kept current with security updates released by upstream providers.</li>
+        <li>No production secrets are committed to source control.</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 6. Change Management -->
+    <div class="section">
+      <h2>6. Change Management</h2>
+      <ul>
+        <li>All changes follow a branch-based workflow across environments (e.g., development, staging, production).</li>
+        <li>Infrastructure configuration changes are restricted to authorised personnel.</li>
+        <li>Changes to production secrets follow the process outlined in Section 3.2.</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 7. Monitoring & Logging -->
+    <div class="section">
+      <h2>7. Monitoring &amp; Logging</h2>
+      <p>Application and infrastructure logs are stored within the primary infrastructure provider for 90 days.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 8. Incident Response -->
+    <div class="section">
+      <h2>8. Incident Response</h2>
+
+      <h3>8.1 Response Procedure</h3>
+      <p>In the event of a suspected or confirmed security incident:</p>
+      <ol class="incident-steps">
+        <li><div><strong style="color:#0D0D0D;">Detect</strong> — Identify the incident via monitoring, alerts, or manual discovery.</div></li>
+        <li><div><strong style="color:#0D0D0D;">Contain</strong> — Isolate affected systems and revoke any compromised credentials.</div></li>
+        <li><div><strong style="color:#0D0D0D;">Assess</strong> — Determine scope, impact, and root cause.</div></li>
+        <li><div><strong style="color:#0D0D0D;">Remediate</strong> — Apply fixes, rotate affected secrets, and deploy patches.</div></li>
+        <li><div><strong style="color:#0D0D0D;">Communicate</strong> — Ensure both Blacksheep and Flux are aware of the incident and alert relevant stakeholders. If user data is affected, engage Blacksheep's compliance team for regulatory reporting obligations.</div></li>
+        <li><div><strong style="color:#0D0D0D;">Review</strong> — Conduct a post-incident review and update this policy if necessary.</div></li>
+      </ol>
+      <p>Where a security incident triggers regulatory obligations, Blacksheep and Flux will coordinate to ensure those obligations are met; see the Sensitive Data Policy, Section 8, for breach notification procedures.</p>
+
+      <h3>8.2 Incident History</h3>
+      <p>As of the last review of this policy, there have been no security incidents or near-misses.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 9. Policy Review -->
+    <div class="section">
+      <h2>9. Policy Review</h2>
+      <p>This policy is reviewed annually or immediately following:</p>
+      <ul>
+        <li>A security incident</li>
+        <li>A significant change to infrastructure or architecture</li>
+        <li>A change in personnel with infrastructure access</li>
+        <li>A request from either party or a regulatory body</li>
+      </ul>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="doc-footer-left">
+      <strong>Blacksheep Operations Pty Ltd</strong> &nbsp;·&nbsp; blacksheep.money
+    </div>
+    <div class="doc-footer-right">
+      Security Policy &nbsp;·&nbsp; Last reviewed 10 April 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

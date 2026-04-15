@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensitive Data Policy — Blacksheep Operations Pty Ltd</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 40px 24px 80px;
+      background-color: #F2F1EA;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 15px;
+      color: #3D3C37;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .doc-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      padding: 36px 0 28px;
+      border-bottom: 1px solid #D6D4C8;
+    }
+
+    .doc-header img {
+      display: block;
+      width: 180px;
+      height: auto;
+    }
+
+    /* ── TITLE BLOCK ── */
+    .title-block {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid #D6D4C8;
+    }
+
+    .doc-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888078;
+      margin-bottom: 16px;
+    }
+
+    .doc-title {
+      margin: 0 0 6px;
+      font-size: 32px;
+      font-weight: 700;
+      color: #0D0D0D;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .doc-subtitle {
+      margin: 0;
+      font-size: 15px;
+      color: #888078;
+    }
+
+    /* ── METADATA TABLE ── */
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0 0;
+    }
+
+    .meta-table td {
+      padding: 10px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #E8E6DE;
+      vertical-align: top;
+    }
+
+    .meta-table td:first-child {
+      width: 160px;
+      font-weight: 600;
+      color: #0D0D0D;
+      padding-right: 24px;
+    }
+
+    .meta-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ── BODY ── */
+    .doc-body {
+      padding-top: 48px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      padding-left: 14px;
+      border-left: 3px solid #BFFF30;
+      font-size: 18px;
+      font-weight: 700;
+      color: #0D0D0D;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0D0D0D;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: #3D3C37;
+    }
+
+    ul, ol {
+      margin: 0 0 14px;
+      padding-left: 22px;
+      color: #3D3C37;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* Numbered breach steps */
+    ol.breach-steps {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: step;
+    }
+
+    ol.breach-steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+
+    ol.breach-steps li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: #BFFF30;
+      color: #0D0D0D;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* ── DATA TABLES ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+
+    .data-table thead tr {
+      background-color: #0D0D0D;
+    }
+
+    .data-table thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #F2F1EA;
+    }
+
+    .data-table tbody tr {
+      border-bottom: 1px solid #E8E6DE;
+    }
+
+    .data-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .data-table tbody td {
+      padding: 11px 14px;
+      color: #3D3C37;
+      vertical-align: top;
+    }
+
+    .data-table tbody td strong {
+      color: #0D0D0D;
+    }
+
+    /* Classification badges */
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .badge-critical  { background-color: #0D0D0D; color: #BFFF30; }
+    .badge-restricted { background-color: #3D3C37; color: #F2F1EA; }
+    .badge-internal  { background-color: #E8E6DE; color: #3D3C37; }
+    .badge-public    { background-color: #F2F1EA; color: #888078; border: 1px solid #D6D4C8; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #D6D4C8;
+      margin: 0 0 48px;
+    }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #D6D4C8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .doc-footer-left {
+      font-size: 12px;
+      color: #888078;
+    }
+
+    .doc-footer-left strong {
+      color: #3D3C37;
+    }
+
+    .doc-footer-right {
+      font-size: 12px;
+      color: #B0AEA5;
+    }
+  </style>
+</head>
+<body>
+<div class="doc-container">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <img src="../blacksheep_email/Logo Horizontal.png" alt="Blacksheep">
+  </div>
+
+  <!-- TITLE BLOCK -->
+  <div class="title-block">
+    <span class="doc-label">Policy Document</span>
+    <h1 class="doc-title">Sensitive Data Policy</h1>
+    <p class="doc-subtitle">Blacksheep Operations Pty Ltd &amp; Flux Interactive Pty Ltd</p>
+
+    <table class="meta-table">
+      <tr>
+        <td>Parties</td>
+        <td>Blacksheep Operations Pty Ltd &amp; Flux Interactive Pty Ltd</td>
+      </tr>
+      <tr>
+        <td>Classification</td>
+        <td>Internal</td>
+      </tr>
+      <tr>
+        <td>Review Cycle</td>
+        <td>Annually, or following any data incident</td>
+      </tr>
+      <tr>
+        <td>Owner</td>
+        <td>Samuel Thompson-Kennedy</td>
+      </tr>
+      <tr>
+        <td>Last Reviewed</td>
+        <td>10 April 2026</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- 1. Purpose -->
+    <div class="section">
+      <h2>1. Purpose</h2>
+      <p>This policy is jointly adopted by Blacksheep Operations Pty Ltd ("Blacksheep") and Flux Interactive Pty Ltd ("Flux"). It defines how sensitive data processed by the Blacksheep platform is classified, handled, stored, and protected. Blacksheep is the owner of all user and operational data; Flux owns and operates the infrastructure on which that data is stored and processed. This policy ensures that data handling practices meet the requirements of the Australian Privacy Act 1988 and the expectations of Blacksheep's stakeholders.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 2. Scope -->
+    <div class="section">
+      <h2>2. Scope</h2>
+      <p>This policy applies to all data processed, stored, or transmitted by Blacksheep systems, including:</p>
+      <ul>
+        <li>Data held in databases</li>
+        <li>Data exchanged with third-party providers</li>
+        <li>Data visible in admin interfaces, logs, or monitoring tools</li>
+        <li>Data held in backups</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 3. Data Classification -->
+    <div class="section">
+      <h2>3. Data Classification</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Definition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>Cryptographic material, authentication secrets, and signing keys. Compromise would allow unauthorised operations.</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Personally identifiable information (PII) and financial data. Subject to privacy legislation and regulatory obligations.</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-internal">Internal</span></td>
+            <td>Operational data that is not sensitive on its own but could aid an attacker if combined with other information.</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-public">Public</span></td>
+            <td>Information intended for or already available to the public.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 4. Data Inventory -->
+    <div class="section">
+      <h2>4. Data Inventory</h2>
+      <p>The following table describes the categories of sensitive data held by Blacksheep and their handling. For storage locations and data processing details, see Appendix A and Appendix B.</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Category</th>
+            <th>Classification</th>
+            <th>Access</th>
+            <th>Retention</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>User Authentication identity</strong></td>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Application-level only</td>
+            <td>Account lifetime (subject to regulatory holds)</td>
+          </tr>
+          <tr>
+            <td><strong>Bank account and wallet details</strong></td>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Application-level only</td>
+            <td>Indefinite (regulatory requirement)</td>
+          </tr>
+          <tr>
+            <td><strong>Transaction records</strong></td>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Application-level only</td>
+            <td>Indefinite (regulatory requirement)</td>
+          </tr>
+          <tr>
+            <td><strong>Account balances</strong></td>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Application-level only</td>
+            <td>Real-time; historical via transactions</td>
+          </tr>
+          <tr>
+            <td><strong>Risk &amp; AML screening results</strong></td>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Application-level; authorised staff</td>
+            <td>Indefinite (regulatory requirement)</td>
+          </tr>
+          <tr>
+            <td><strong>Internal notes</strong> (staff notes on users/accounts)</td>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Admin portal (authorised staff)</td>
+            <td>Indefinite (regulatory requirement)</td>
+          </tr>
+          <tr>
+            <td><strong>API keys &amp; provider secrets</strong></td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>Irrevocably sealed; senior engineering only</td>
+            <td>Rotated per provider requirements</td>
+          </tr>
+          <tr>
+            <td><strong>Cryptographic signing keys</strong></td>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>Key management service; IAM-controlled</td>
+            <td>Key lifetime (managed via KMS)</td>
+          </tr>
+          <tr>
+            <td><strong>Application and infrastructure logs</strong></td>
+            <td><span class="badge badge-internal">Internal</span></td>
+            <td>Authorised staff via observability tooling</td>
+            <td>90 days (see Security Policy §7)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 5. Data Handling Principles -->
+    <div class="section">
+      <h2>5. Data Handling Principles</h2>
+
+      <h3>5.1 Data Minimisation</h3>
+      <ul>
+        <li>Blacksheep collects only the data necessary to provide its services and meet regulatory obligations.</li>
+        <li>Identity verification is handled by Blacksheep's designated third-party providers. Flux integrates these providers into the platform but does not own or store identity documents. Blacksheep retains basic identity data but not identity document information.</li>
+        <li>Wallet custody and signing is managed by a third-party provider. Blacksheep does not hold complete private keys of users. Transaction signing is managed by a third-party provider.</li>
+      </ul>
+
+      <h3>5.2 Access Control</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Classification</th>
+            <th>Who Can Access</th>
+            <th>How</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-critical">Critical</span></td>
+            <td>Senior Flux engineering only, authorised by Blacksheep founder</td>
+            <td>Key management service, sealed secrets manager</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-restricted">Restricted</span></td>
+            <td>Application layer; authorised admin staff</td>
+            <td>Application code; admin portal</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-internal">Internal</span></td>
+            <td>Authorised personnel</td>
+            <td>Observability tooling, infrastructure dashboards</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-public">Public</span></td>
+            <td>Anyone</td>
+            <td>Public endpoints</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>No personnel have direct database access in the normal course of operations.</li>
+        <li>Production database credentials are sealed within the infrastructure secrets manager.</li>
+        <li>Admin portal access is authenticated and restricted to authorised Blacksheep staff.</li>
+      </ul>
+
+      <h3>5.3 Logging &amp; Sensitive Data</h3>
+      <ul>
+        <li>Application and infrastructure logs must not contain PII, credentials, or financial data.</li>
+        <li>Structured logging is configured to exclude sensitive fields.</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 6. Data Shared with Third Parties -->
+    <div class="section">
+      <h2>6. Data Shared with Third Parties</h2>
+      <p>Blacksheep shares limited data with third-party providers to deliver its services. The principle of data minimisation applies — only the data required for the specific service is shared.</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Data Shared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Banking / Payments</strong></td>
+            <td>Fiat transaction instructions, account references, travel rule and personal information required by relevant jurisdiction regulators</td>
+          </tr>
+          <tr>
+            <td><strong>Crypto Exchange</strong></td>
+            <td>Trade instructions, balances</td>
+          </tr>
+          <tr>
+            <td><strong>Identity Verification</strong></td>
+            <td>Identity data (via third-party provider flow)</td>
+          </tr>
+          <tr>
+            <td><strong>AML / Compliance</strong></td>
+            <td>Wallet addresses, transaction data</td>
+          </tr>
+          <tr>
+            <td><strong>Blockchain Relay</strong></td>
+            <td>Signed transaction data</td>
+          </tr>
+          <tr>
+            <td><strong>Wallet Custody</strong></td>
+            <td>Unsigned transaction data</td>
+          </tr>
+          <tr>
+            <td><strong>Email</strong></td>
+            <td>User email addresses, transactional content</td>
+          </tr>
+          <tr>
+            <td><strong>Support</strong></td>
+            <td>Support ticket content</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Third-party providers store data in their own infrastructure according to their own data residency and retention policies. For a list of third-party providers used, see Appendix B.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 7. Data Retention & Disposal -->
+    <div class="section">
+      <h2>7. Data Retention &amp; Disposal</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Retention Period</th>
+            <th>Disposal Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>User account data</strong></td>
+            <td>Account lifetime; deleted upon closure (subject to regulatory holds)</td>
+            <td>Soft delete, then hard delete after hold period</td>
+          </tr>
+          <tr>
+            <td><strong>Transaction records</strong></td>
+            <td>Indefinite (regulatory requirement)</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td><strong>Identity data metadata</strong></td>
+            <td>Account lifetime</td>
+            <td>Deleted with "User account data"; source records held by provider</td>
+          </tr>
+          <tr>
+            <td><strong>Database backups</strong></td>
+            <td>Per backup schedule (see Security Policy, Section 4.3)</td>
+            <td>Automatic expiry</td>
+          </tr>
+          <tr>
+            <td><strong>Application and infrastructure logs</strong></td>
+            <td>90 days (see Security Policy §7)</td>
+            <td>Automatic expiry</td>
+          </tr>
+          <tr>
+            <td><strong>Sealed secrets</strong></td>
+            <td>Until rotated</td>
+            <td>Overwritten on rotation; prior values irrecoverable</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>When data is deleted from the production database, it will naturally expire from backups according to the backup retention schedule. No separate backup purge process is required.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 8. Breach Notification -->
+    <div class="section">
+      <h2>8. Breach Notification</h2>
+      <p>In the event that sensitive data is compromised:</p>
+      <ol class="breach-steps">
+        <li><div>Follow the Incident Response procedure in the Security Policy (Section 8).</div></li>
+        <li><div>Notify Blacksheep's compliance team immediately if Restricted or Critical data is affected.</div></li>
+        <li><div>Both Flux and Blacksheep are APP entities under the Privacy Act 1988 and each carry independent notification obligations under the Notifiable Data Breaches (NDB) scheme administered by the Office of the Australian Information Commissioner (OAIC). As the principal data controller, Blacksheep will ordinarily lead NDB assessment and notification to the OAIC and affected individuals. Flux will notify directly only where Blacksheep has not fulfilled its NDB obligations within the statutory timeframe, to Flux's satisfaction.</div></li>
+      </ol>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 9. Staff Obligations -->
+    <div class="section">
+      <h2>9. Staff Obligations</h2>
+      <p>All personnel with access to Blacksheep systems must:</p>
+      <ul>
+        <li>Not extract, copy, or store sensitive data on personal devices or external storage.</li>
+        <li>Not share credentials, API keys, or access tokens with unauthorised parties.</li>
+        <li>Not access user data beyond what is required for their role.</li>
+        <li>Report any suspected data exposure or policy violation immediately.</li>
+        <li>Use secure, up-to-date devices when accessing Blacksheep infrastructure.</li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 10. Data Subject Rights -->
+    <div class="section">
+      <h2>10. Data Subject Rights</h2>
+      <p>Under the Australian Privacy Principles (APPs 12 and 13), individuals have the right to access personal information held about them and to request correction of inaccurate information. As the principal data controller, Blacksheep is responsible for receiving and responding to these requests. Flux will provide technical support to locate, export, or correct personal information where required to fulfil a valid request.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 11. Policy Review -->
+    <div class="section">
+      <h2>11. Policy Review</h2>
+      <p>This policy is reviewed annually or immediately following:</p>
+      <ul>
+        <li>A data breach or suspected breach</li>
+        <li>A change in data handling practices or architecture</li>
+        <li>A change in applicable legislation or regulatory guidance</li>
+        <li>A change in personnel with access to sensitive data</li>
+        <li>A request from either party or a regulatory body</li>
+      </ul>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="doc-footer-left">
+      <strong>Blacksheep Operations Pty Ltd</strong> &nbsp;·&nbsp; blacksheep.money
+    </div>
+    <div class="doc-footer-right">
+      Sensitive Data Policy &nbsp;·&nbsp; Last reviewed 10 April 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
